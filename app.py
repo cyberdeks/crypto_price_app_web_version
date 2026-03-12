@@ -15,8 +15,8 @@ def home():
     if valor_digitado:
 
         url = f"https://api.coingecko.com/api/v3/simple/price?ids={valor_digitado}&vs_currencies=usd,brl"
-
-        resposta = requests.get(url)
+        headers = {"User-Agent": "Mozilla/5.0"}
+        resposta = requests.get(url, headers=headers)
         dados = resposta.json()
 
         if valor_digitado in dados:
