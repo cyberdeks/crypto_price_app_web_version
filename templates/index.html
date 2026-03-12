@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+<style>
+    body {font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        text-align: center;
+        margin: 0;
+        padding 0;}
+
+    h1 {background-color: #3183b3;
+        color: white;
+        padding: 20px;
+        margin: 0;}
+    
+    form{margin: 20px auto;
+         display: inline-block;}
+    
+    input[type="text"]{
+        padding: 10px;
+        font-size: 16px;
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #3183b3;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #3183b3
+    }
+
+    p {
+        font-size: 18px;
+        color: #333
+    }
+
+    .resultado {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+</style>
+
+
+    <title>Crypto Price App</title>
+</head>
+
+<body>
+
+<h1>Crypto Price App</h1>
+
+<p>Digite o nome de uma criptomoeda:</p>
+
+<form>
+
+<input type="text" name="moeda">
+
+<button type="submit">Pesquisar</button>
+
+</form>
+
+{% if moeda %}
+<p>Você pesquisou: {{ moeda }}</p>
+{% endif %}
+
+{% if preco_usd %}
+<p>Preço em USD: $ {{ preco_usd }}</p>
+<p>Preço em BRL: R$ {{ preco_brl }}</p>
+{% endif %}
+
+</body>
+
+</html>
